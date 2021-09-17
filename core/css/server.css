@@ -82,7 +82,7 @@ button.primary:focus,
 }
 #header .logo-icon {
 	width: 62px;
-	height: 34px;
+	height: auto;
 }
 #appmenu li[data-id="activity"] {
     display: none;
