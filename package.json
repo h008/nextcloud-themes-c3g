@@ -1,0 +1,77 @@
+{
+	"name": "c3g_theme",
+	"description": "A simple Nextcloud app tutorial for building a notes app",
+	"version": "0.0.19",
+	"author": "rockedcubeJPN <info@rockedcube.com>",
+	"contributors": [
+		"rockedcubeJPN <info@rockedcube.com>"
+	],
+	"bugs": {
+		"url": "https://github.com/nextcloud/app-tutorial/issues"
+	},
+	"repository": {
+		"url": "https://github.com/nextcloud/app-tutorial",
+		"type": "git"
+	},
+	"homepage": "https://github.com/nextcloud/app-tutorial",
+	"license": "agpl",
+	"private": true,
+	"scripts": {
+		"build": "NODE_ENV=production webpack --progress --config webpack.js",
+		"dev": "npm run stylelint:fix && npm run lint:fix && NODE_ENV=development webpack --progress --config webpack.js",
+		"watch": "NODE_ENV=development webpack --progress --watch --config webpack.js",
+		"serve": "NODE_ENV=development webpack serve --progress --config webpack.js",
+		"lint": "eslint --ext .js,.vue src",
+		"lint:fix": "eslint --ext .js,.vue src --fix",
+		"stylelint": "stylelint css/*.css css/*.scss src/**/*.scss src/**/*.vue",
+		"stylelint:fix": "stylelint css/*.css css/*.scss src/**/*.scss src/**/*.vue --fix"
+	},
+	"dependencies": {
+		"@nextcloud/axios": "^1.6.0",
+		"@nextcloud/dialogs": "^3.1.2",
+		"@nextcloud/event-bus": "^1.3.0",
+		"@nextcloud/router": "^1.2.0",
+		"@nextcloud/vue": "^4.0.3",
+		"dayjs": "^1.10.6",
+		"material-design-icons": "^3.0.1",
+		"sanitize.css": "^12.0.1",
+		"uuid": "^3.4.0",
+		"vue": "^2.6.14",
+		"vue-material-design-icons": "^4.13.0",
+		"vue-tinymce-editor": "^1.6.2"
+	},
+	"browserslist": [
+		"extends @nextcloud/browserslist-config"
+	],
+	"engines": {
+		"node": ">=14.0.0",
+		"npm": ">=7.0.0"
+	},
+	"devDependencies": {
+		"@babel/eslint-parser": "^7.15.0",
+		"@nextcloud/babel-config": "^1.0.0",
+		"@nextcloud/browserslist-config": "^2.1.0",
+		"@nextcloud/eslint-config": "^6.1.0",
+		"@nextcloud/eslint-plugin": "^2.0.0",
+		"@nextcloud/stylelint-config": "^1.0.0-beta.0",
+		"@nextcloud/webpack-vue-config": "^4.1.0",
+		"babel-loader": "^8.2.2",
+		"deepmerge": "^4.2.2",
+		"eslint": "^7.32.0",
+		"eslint-config-standard": "^16.0.3",
+		"eslint-plugin-import": "^2.24.2",
+		"eslint-plugin-jsdoc": "^36.0.8",
+		"eslint-plugin-node": "^11.1.0",
+		"eslint-plugin-promise": "^5.1.0",
+		"eslint-plugin-vue": "^7.17.0",
+		"node-polyfill-webpack-plugin": "^1.1.4",
+		"sass": "^1.32.13",
+		"stylelint": "^13.13.1",
+		"stylelint-config-recommended-scss": "^4.3.0",
+		"stylelint-scss": "^3.20.1",
+		"url-loader": "^4.1.1",
+		"vue-loader": "^15.9.8",
+		"webpack": "^5.51.1",
+		"webpack-cli": "^4.8.0"
+	}
+}

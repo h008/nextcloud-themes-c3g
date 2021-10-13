@@ -25,7 +25,7 @@ class OC_Theme {
 	 * @return string URL
 	 */
 	public function getBaseUrl() {
-		return 'https://cloud-demo2.c3g.jp';
+		return 'http:/localhost';
 	}
 
 	/**
@@ -33,7 +33,7 @@ class OC_Theme {
 	 * @return string URL
 	 */
 	public function getDocBaseUrl() {
-		return 'https://cloud-demo2.c3g.jp';
+		return 'http://localhost';
 	}
 
 	/**
