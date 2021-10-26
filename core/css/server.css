@@ -115,3 +115,38 @@ a[href*="spreed/?callUser=c3g_support"]{
 li[data-id="help"]{
 	display:none;
 }
+
+.fc-theme-standard td, .fc-theme-standard th {
+	border: 2px solid  #eee;
+}
+.fc-daygrid-day , .fc-col-header-cell  {
+	border: 2px solid #ccc !important;
+}
+.fc-day-sat > div > div >.fc-daygrid-day-number,
+.fc-day-sat > div > .fc-col-header-cell-cushion {
+	color:blue !important;
+}
+.fc-day-sun > div > div > .fc-daygrid-day-number ,
+.fc-day-sun > div > .fc-col-header-cell-cushion {
+	color:red !important;
+}
+table.fc-scrollgrid-sync-table > tbody > tr > td.fc-daygrid-day.fc-day.fc-day-sat.fc-day-past ,
+table.fc-scrollgrid-sync-table > tbody > tr > td.fc-daygrid-day.fc-day.fc-day-sun.fc-day-past {
+	background-color : rgba(240,240,240,0.5) ;
+	border: 2px solid #ccc !important;
+}
+.fc-scrollgrid-sync-table > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(7) > div:nth-child(1){
+	min-height:161px !important;
+}
+.fc-col-header-cell .fc-day .fc-day-sat {
+
+	background-color : rgba(240,240,240,0.5) !important;
+}
+.fc-daygrid-day .fc-day .fc-day-sat {
+	background-color : rgba(240,240,240,0.5) !important;
+	outline: 2px solid #eee;
+}
+
+.fc-daygrid-day .fc-day {
+	max-height:150px !important;
+}
