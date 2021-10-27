@@ -122,12 +122,10 @@ li[data-id="help"]{
 .fc-daygrid-day , .fc-col-header-cell  {
 	border: 2px solid #ccc !important;
 }
-.fc-day-sat > div > div >.fc-daygrid-day-number,
-.fc-day-sat > div > .fc-col-header-cell-cushion {
+.fc-day-sat > div > div >.fc-daygrid-day-number{
 	color:blue !important;
 }
-.fc-day-sun > div > div > .fc-daygrid-day-number ,
-.fc-day-sun > div > .fc-col-header-cell-cushion {
+.fc-day-sun > div > div > .fc-daygrid-day-number{
 	color:red !important;
 }
 table.fc-scrollgrid-sync-table > tbody > tr > td.fc-daygrid-day.fc-day.fc-day-sat.fc-day-past ,
@@ -149,4 +147,28 @@ table.fc-scrollgrid-sync-table > tbody > tr > td.fc-daygrid-day.fc-day.fc-day-su
 
 .fc-daygrid-day .fc-day {
 	max-height:150px !important;
+}
+th.fc-col-header-cell.fc-day-sat > .fc-scrollgrid-sync-inner  {
+	background-color:blue;
+}
+th.fc-col-header-cell.fc-day-sun > .fc-scrollgrid-sync-inner  {
+	background-color:red;
+}
+.fc-day-sun > .fc-scrollgrid-sync-inner > .fc-col-header-cell-cushion ,
+.fc-day-sat > .fc-scrollgrid-sync-inner > .fc-col-header-cell-cushion {
+	color:white !important;
+}
+.fc-day-today > .fc-daygrid-day-frame > .fc-daygrid-day-top > .fc-daygrid-day-number {
+    background-color:#50BDE4;
+    color: #F7F7F7;
+    border-radius: 0%;
+    margin: 4px;
+    width: 100%;
+    height: 24px;
+    text-align: center;
+    font-weight: bold !important;
+    padding: 0 !important;
+}
+.c3g__rokuyou {
+	color:black;
 }
