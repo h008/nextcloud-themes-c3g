@@ -101,7 +101,8 @@ button.primary:focus,
 }
 
 
-#app-navigation > ul > li > a[href="/settings/user/privacy"]{
+#app-navigation > ul > li > a[href="/settings/user/privacy"],
+#app-navigation > ul > li > a[href="/settings/user/activity"]{
     display:none;
 }
 
@@ -115,6 +116,7 @@ a[href*="spreed/?callUser=c3g_support"]{
 li[data-id="help"]{
 	display:none;
 }
+
 
 .fc-theme-standard td, .fc-theme-standard th {
 	border: 2px solid  #eee;
