@@ -84,7 +84,8 @@ button.primary:focus,
 	width: 62px;
 	height: auto;
 }
-#appmenu li[data-id="activity"] {
+#appmenu li[data-id="activity"],
+#apps ul li[data-id="activity"] {
     display: none;
 }
 

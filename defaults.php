@@ -25,7 +25,7 @@ class OC_Theme {
 	 * @return string URL
 	 */
 	public function getBaseUrl() {
-		return 'http:/localhost';
+		return 'https://www.sincerely.c3g.jp';
 	}
 
 	/**
@@ -33,7 +33,7 @@ class OC_Theme {
 	 * @return string URL
 	 */
 	public function getDocBaseUrl() {
-		return 'http://localhost';
+		return 'https://www.sincerely.c3g.jp';
 	}
 
 	/**
@@ -41,7 +41,7 @@ class OC_Theme {
 	 * @return string title
 	 */
 	public function getTitle() {
-		return 'C3G CLOUD DEMO';
+		return 'C3G CLOUD for Sincerely';
 	}
 
 	/**
@@ -49,7 +49,7 @@ class OC_Theme {
 	 * @return string title
 	 */
 	public function getName() {
-		return 'C3G CLOUD DEMO';
+		return 'C3G CLOUD for Sincerely';
 	}
 
 	/**
@@ -57,7 +57,7 @@ class OC_Theme {
 	 * @return string title
 	 */
 	public function getHTMLName() {
-		return 'C3G CLOUD DEMO';
+		return 'C3G CLOUD for Sincerely';
 	}
 
 	/**
