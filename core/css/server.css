@@ -84,9 +84,94 @@ button.primary:focus,
 	width: 62px;
 	height: auto;
 }
+
+#appmenu li  {
+	border-right:#fff solid 4px;
+	border-left: #fff solid 4px;
+}
+#appmenu li+ li  {
+	border-left:0;
+	border-right: #fff solid 4px;
+}
+
+#appmenu li a {
+    position: relative;
+    display: flex;
+    margin: 0;
+    height: 50px;
+    width: 275px;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: -0.5px;
+    font-size: 1.2em;
+	font-weight: bold;
+	opacity: 0.7;
+	transition: .3s;
+	color: #fff;
+}
+
+#appmenu li a:hover {
+	font-weight: 800;
+	font-size:1.25em;
+	opacity:0.9;
+	transform: perspective(100px) translateZ(20px);
+  }
+
+#appmenu li a.active {
+    opacity: 1;
+    font-weight: 900;
+	font-size:1.25em;
+}
+
+#appmenu li a::before {
+    content: inherit;
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border: 0 solid transparent;
+    border-bottom-color: var(--color-main-background);
+    border-width: 10px;
+    transform: translateX(-50%);
+    left: 50%;
+    bottom: 0;
+    display: flex;
+}
+
+#appmenu li a svg {
+	display: none;
+}
+
+#appmenu li a span {
+	color: #fff;
+	opacity: 1.0;
+	bottom:12px;
+}
+
+
+#appmenu li[data-id="files"]  {
+	background-color:#FF5050;
+}
+
+#appmenu li[data-id="spreed"]  {
+	background-color:#40AFB2;
+}
+
+#appmenu li[data-id="calendar"] {
+	background-color:#FFC000;
+}
+
+#appmenu li[data-id="welcomapp"] {
+	background-color:#8E83B7;
+}
+
 #appmenu li[data-id="activity"],
 #apps ul li[data-id="activity"] {
     display: none;
+}
+
+#more-apps {
+	width:50px;
 }
 
 #app-navigation > ul > li > a[href="/settings/user/sync-clients"]{
@@ -175,3 +260,20 @@ th.fc-col-header-cell.fc-day-sun > .fc-scrollgrid-sync-inner  {
 .c3g__rokuyou {
 	color:black;
 }
+@media (max-width:1220px){ 
+#appmenu li a {
+	width:220px;
+	font-size:medium;
+
+}
+#appmenu li a:hover {
+	font-weight: 800;
+	font-size:1.15em;
+	opacity:0.9;
+	transform: perspective(100px) translateZ(10px);
+  }
+#appmenu li a.active {
+    font-weight: 900;
+	font-size:1.15em;
+}
+  }

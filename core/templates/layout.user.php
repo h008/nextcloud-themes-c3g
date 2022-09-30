@@ -57,6 +57,9 @@
 							<a href="<?php print_unescaped($entry['href']); ?>"
 								<?php if ($entry['active']): ?> class="active"<?php endif; ?>
 								aria-label="<?php p($entry['name']); ?>">
+								<div>
+									<?php p($entry['name']); ?>
+								</div>
 									<svg width="24" height="20" viewBox="0 0 24 20" alt=""<?php if ($entry['unread'] !== 0) { ?> class="has-unread"<?php } ?>>
 										<defs>
 											<?php if ($_['themingInvertMenu']) { ?><filter id="invertMenuMain-<?php p($entry['id']); ?>"><feColorMatrix in="SourceGraphic" type="matrix" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0" /></filter><?php } ?>
@@ -69,9 +72,6 @@
 										<circle class="app-icon-notification" r="3" cx="21" cy="3" fill="red"/>
 									</svg>
 								<div class="unread-counter" aria-hidden="true"><?php p($entry['unread']); ?></div>
-								<span>
-									<?php p($entry['name']); ?>
-								</span>
 							</a>
 						</li>
 					<?php endforeach; ?>
@@ -79,7 +79,6 @@
 						aria-haspopup="true" aria-controls="navigation" aria-expanded="false">
 						<a href="#" aria-label="<?php p($l->t('More apps')); ?>">
 							<div class="icon-more-white"></div>
-							<span><?php p($l->t('More')); ?></span>
 						</a>
 					</li>
 				</ul>
