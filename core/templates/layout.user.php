@@ -60,17 +60,6 @@
 								<div>
 									<?php p($entry['name']); ?>
 								</div>
-									<svg width="24" height="20" viewBox="0 0 24 20" alt=""<?php if ($entry['unread'] !== 0) { ?> class="has-unread"<?php } ?>>
-										<defs>
-											<?php if ($_['themingInvertMenu']) { ?><filter id="invertMenuMain-<?php p($entry['id']); ?>"><feColorMatrix in="SourceGraphic" type="matrix" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0" /></filter><?php } ?>
-											<mask id="hole">
-												<rect width="100%" height="100%" fill="white"/>
-												<circle r="4.5" cx="21" cy="3" fill="black"/>
-											</mask>
-										</defs>
-										<image x="2" y="0" width="20" height="20" preserveAspectRatio="xMinYMin meet"<?php if ($_['themingInvertMenu']) { ?> filter="url(#invertMenuMain-<?php p($entry['id']); ?>)"<?php } ?> xlink:href="<?php print_unescaped($entry['icon'] . '?v=' . $_['versionHash']); ?>" style="<?php if ($entry['unread'] !== 0) { ?>mask: url("#hole");<?php } ?>" class="app-icon"></image>
-										<circle class="app-icon-notification" r="3" cx="21" cy="3" fill="red"/>
-									</svg>
 								<div class="unread-counter" aria-hidden="true"><?php p($entry['unread']); ?></div>
 							</a>
 							<div class="unread_counter_wrapper">
@@ -109,6 +98,8 @@
 											<image x="0" y="0" width="16" height="16" preserveAspectRatio="xMinYMin meet" filter="url(#invertMenuMore-<?php p($entry['id']); ?>)" xlink:href="<?php print_unescaped($entry['icon'] . '?v=' . $_['versionHash']); ?>" style="<?php if ($entry['unread'] !== 0) { ?>mask: url("#hole");<?php } ?>" class="app-icon"></image>
 											<circle class="app-icon-notification" r="3" cx="17" cy="3" fill="red"/>
 										</svg>
+										<div id="apps-data-unread_<?php print($entry['id']); ?>" data-unread="<?php print($entry['id']); ?>"  class="unread_counter">
+										</div>
 										<div class="unread-counter" aria-hidden="true"><?php p($entry['unread']); ?></div>
 										<span class="app-title"><?php p($entry['name']); ?></span>
 									</a>

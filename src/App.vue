@@ -1,7 +1,7 @@
 <template>
 	<div class="c3g_clock__wrapper">
-		<div class="c3g_clock__text">
-			{{ displayDate }}{{ displayTime }}-{{ unreadTalk }}
+		<div id="c3g_clock__text" class="c3g_clock__text">
+			{{ displayDate }}{{ displayTime }}
 		</div>
 	</div>
 </template>
@@ -9,7 +9,6 @@
 <script>
 import axios from '@nextcloud/axios'
 import { generateUrl } from '@nextcloud/router'
-import { showError } from '@nextcloud/dialogs'
 
 export default {
 	data() {
@@ -45,8 +44,18 @@ export default {
 		},
 		updateTime() {
 			const currentDate = new Date()
-			this.displayTime = `${currentDate.getHours().toString().padStart(2, '0')}:${currentDate.getMinutes().toString().padStart(2, '0')}`
-			this.displayDate = `${currentDate.getFullYear()}年${(currentDate.getMonth() + 1).toString().padStart(2, '0')}月${currentDate.getDate().toString().padStart(2, '0')}日(${this.youbi[currentDate.getDay()]})`
+			const elWidth = window.innerWidth
+			if (elWidth < 450) {
+				this.displayTime = `${currentDate.getHours().toString().padStart(2, '0')}:${currentDate.getMinutes().toString().padStart(2, '0')}`
+				this.displayDate = ''
+			} else if (elWidth < 600) {
+				this.displayTime = `${currentDate.getHours().toString().padStart(2, '0')}:${currentDate.getMinutes().toString().padStart(2, '0')}`
+				this.displayDate = `${(currentDate.getMonth() + 1).toString().padStart(2, '0')}/${currentDate.getDate().toString().padStart(2, '0')}(${this.youbi[currentDate.getDay()]})`
+
+			} else {
+				this.displayTime = `${currentDate.getHours().toString().padStart(2, '0')}:${currentDate.getMinutes().toString().padStart(2, '0')}`
+				this.displayDate = `${currentDate.getFullYear()}年${(currentDate.getMonth() + 1).toString().padStart(2, '0')}月${currentDate.getDate().toString().padStart(2, '0')}日(${this.youbi[currentDate.getDay()]})`
+			}
 		},
 		getUnreadThenSet() {
 			const that = this
@@ -104,25 +113,28 @@ export default {
 		setUnreadCounter(unreadList) {
 			for (const item of unreadList) {
 				if (!item.app) { return }
-				const qSelector = `#appmenu li div div[data-unread="${item.app}"]`
+				const qSelector1 = `#appmenu li div div[data-unread="${item.app}"]`
+				const qSelector2 = `#apps-data-unread_${item.app}`
+				for (const qSelector of [qSelector1, qSelector2]) {
 
-				const targetMenuElm = window.document.querySelector(qSelector)
-				if (!targetMenuElm) { return }
-				if (item.msgExists) {
-					targetMenuElm.textContent = '!'
-					targetMenuElm.style.display = 'inherit'
-					targetMenuElm.style.backgroundColor = 'red'
-					targetMenuElm.style.color = '#fff'
-				} else {
-					targetMenuElm.style.backgroundColor = 'var(--color-primary-text)'
-					targetMenuElm.style.color = 'inherit'
-				}
-				if (item.unreadCount > 0) {
-					targetMenuElm.textContent = item.unreadCount
-					targetMenuElm.style.display = 'inherit'
-				}
-				if (!item.unreadCount && !item.msgExists) {
-					targetMenuElm.style.display = 'none'
+					const targetMenuElm = window.document.querySelector(qSelector)
+					if (!targetMenuElm) { return }
+					if (item.msgExists) {
+						targetMenuElm.textContent = '!'
+						targetMenuElm.style.display = 'inherit'
+						targetMenuElm.style.backgroundColor = 'red'
+						targetMenuElm.style.color = '#fff'
+					} else {
+						targetMenuElm.style.backgroundColor = 'var(--color-primary-text)'
+						targetMenuElm.style.color = 'inherit'
+					}
+					if (item.unreadCount > 0) {
+						targetMenuElm.textContent = item.unreadCount
+						targetMenuElm.style.display = 'inherit'
+					}
+					if (!item.unreadCount && !item.msgExists) {
+						targetMenuElm.style.display = 'none'
+					}
 				}
 			}
 		},
@@ -139,10 +151,7 @@ export default {
 			return await axios.get(generateUrl('/apps/welcomapp/filtercount'), { params: filter })
 				.then((result) => {
 					return result.data
-				}).catch((e) => {
-					showError(t('welcomapp', 'Could not count notes'))
-					return Promise.resolve(0)
-				})
+				}).catch(() => { return 0 })
 		},
 	},
 
