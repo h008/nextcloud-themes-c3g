@@ -260,11 +260,28 @@ th.fc-col-header-cell.fc-day-sun > .fc-scrollgrid-sync-inner  {
 .c3g__rokuyou {
 	color:black;
 }
+.unread_counter_wrapper{
+	position:relative
+}
+.unread_counter {
+	position: absolute;
+	top:2px;
+	right: 8px;
+	font-size:small;
+	font-weight: bolder;
+	padding: 0px 9px;
+	background-color: var(--color-primary-text);
+	color: var(--color-primary);
+	
+	opacity: 1;
+	border-radius:50%;
+	display:none;
+}
+
 @media (max-width:1220px){ 
 #appmenu li a {
 	width:220px;
 	font-size:medium;
-
 }
 #appmenu li a:hover {
 	font-weight: 800;

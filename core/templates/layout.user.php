@@ -73,7 +73,13 @@
 									</svg>
 								<div class="unread-counter" aria-hidden="true"><?php p($entry['unread']); ?></div>
 							</a>
+							<div class="unread_counter_wrapper">
+								<div data-unread="<?php print($entry['id']); ?>"  class="unread_counter">
+								0
+								</div>
+							</div>
 						</li>
+
 					<?php endforeach; ?>
 					<li id="more-apps" class="menutoggle"
 						aria-haspopup="true" aria-controls="navigation" aria-expanded="false">
@@ -180,7 +186,5 @@
 		<div id="content" class="app-<?php p($_['appid']) ?>" role="main">
 			<?php print_unescaped($_['content']); ?>
 		</div>
-
-
 	</body>
 </html>
