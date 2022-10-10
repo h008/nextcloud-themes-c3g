@@ -62,7 +62,6 @@ export default {
 			const p1 = this.getUnreadTalk()
 			const p2 = this.countUnreadNote()
 			Promise.all([p1, p2]).then((array) => {
-				console.info('p1', array)
 				that.unreadList = that.setUnreadList(array)
 				that.setUnreadCounter(that.unreadList)
 			})
@@ -76,7 +75,6 @@ export default {
 				if (resp?.data?.ocs?.data && Array.isArray(resp.data.ocs.data)) {
 					const rooms = resp.data.ocs.data
 					for (const room of rooms) {
-						console.info(room)
 						if (room.displayName !== 'Talk アップデート ✅') {
 							unreadTalk += room.unreadMessages || 0
 							const lastRead = room.lastReadMessage || 0
