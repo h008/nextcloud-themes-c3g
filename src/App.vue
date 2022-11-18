@@ -66,11 +66,15 @@ export default {
 		setColorOfSideBarTitle(color) {
 			// const darkColor = this.calcColor(color)
 			const css = `
-			form.app-navigation-search {
+			form.app-navigation-search,
+			#app-navigation:not(.vue) {
 				background-color:${color};
 			}
 			#app-navigation:not(.vue)>ul>li a,
-			#app-navigation a{
+			#app-navigation:not(.vue)>ul>li>ul>li>a,
+			#app-navigation a,
+			#sublist-shareoverview,
+			#sublist-shareoverview>li {
 				color:#FFFFFF;
 				background-color: ${color};
 			}
@@ -78,7 +82,10 @@ export default {
 			#app-navigation:not(.vue)>ul>li a:hover,
 			#app-navigation-vue>ul a.list-item[id*="conversation_"]:hover,
 			#app-navigation-vue>ul a.list-item--active[id*="conversation_"],
-			#app-navigation-vue>ul a.list-item[id*="conversation_"]:active {
+			#app-navigation-vue>ul a.list-item[id*="conversation_"]:active,
+			#app-navigation:not(.vue)>ul>li>ul>li:hover,
+			#app-navigation:not(.vue)>ul>li>ul>li:focus,
+			#app-navigation:not(.vue)>ul>li>ul>li:focus>a {
 				background-color: ${color} !important;
 				filter:brightness(80%);
 			}`
