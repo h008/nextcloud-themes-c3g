@@ -54,7 +54,7 @@
 				<ul id="appmenu" <?php if ($_['themingInvertMenu']) { ?>class="inverted"<?php } ?>>
 					<?php foreach ($_['navigation'] as $entry): ?>
 						<li data-id="<?php p($entry['id']); ?>" class="hidden" tabindex="-1">
-							<a href="<?php print_unescaped($entry['href']); ?>"
+							<a class="appmenu__tab" href="<?php print_unescaped($entry['href']); ?>"
 								<?php if ($entry['active']): ?> class="active"<?php endif; ?>
 								aria-label="<?php p($entry['name']); ?>">
 								<div>
@@ -63,8 +63,11 @@
 								<div class="unread-counter" aria-hidden="true"><?php p($entry['unread']); ?></div>
 							</a>
 							<div class="unread_counter_wrapper">
-								<div data-unread="<?php print($entry['id']); ?>"  class="unread_counter">
-								0
+									<div class="unread_counter_area">
+								<button data-badge1="<?php print($entry['id']); ?>"  class="unread_badge1">
+								</button>
+								<button data-badge2="<?php print($entry['id']); ?>"  class="unread_badge2">
+								</button>
 								</div>
 							</div>
 						</li>
@@ -87,7 +90,7 @@
 									<a href="<?php print_unescaped($entry['href']); ?>"
 										<?php if ($entry['active']): ?> class="active"<?php endif; ?>
 										aria-label="<?php p($entry['name']); ?>">
-										<svg width="20" height="20" viewBox="0 0 20 20" alt=""<?php if ($entry['unread'] !== 0) { ?> class="has-unread"<?php } ?>>
+										<svg width="20" height="20" viewBox="0 0 20 20" alt="" <?php if ($entry['unread'] !== 0) { ?> class="has-unread"<?php } ?>>
 											<defs>
 												<filter id="invertMenuMore-<?php p($entry['id']); ?>"><feColorMatrix in="SourceGraphic" type="matrix" values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0"></feColorMatrix></filter>
 												<mask id="hole">
@@ -98,9 +101,10 @@
 											<image x="0" y="0" width="16" height="16" preserveAspectRatio="xMinYMin meet" filter="url(#invertMenuMore-<?php p($entry['id']); ?>)" xlink:href="<?php print_unescaped($entry['icon'] . '?v=' . $_['versionHash']); ?>" style="<?php if ($entry['unread'] !== 0) { ?>mask: url("#hole");<?php } ?>" class="app-icon"></image>
 											<circle class="app-icon-notification" r="3" cx="17" cy="3" fill="red"/>
 										</svg>
-										<div id="apps-data-unread_<?php print($entry['id']); ?>" data-unread="<?php print($entry['id']); ?>"  class="unread_counter">
-										</div>
-										<div class="unread-counter" aria-hidden="true"><?php p($entry['unread']); ?></div>
+										<button  id="apps-data-badge1_<?php print($entry['id']); ?>" data-unread="<?php print($entry['id']); ?>"  class="unread_counter">
+										</button>
+										<button id="apps-data-badge2_<?php print($entry['id']); ?>" data-unread="<?php print($entry['id']); ?>"  class="unread_counter">
+										</button>
 										<span class="app-title"><?php p($entry['name']); ?></span>
 									</a>
 									</li>
