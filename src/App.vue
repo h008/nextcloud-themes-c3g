@@ -34,10 +34,6 @@ export default {
 	mounted() {
 		this.getPreferences()
 		setInterval(() => { this.intervalFunction() }, 1000)
-		this.fetchColorConfig().then((resp) => {
-			this.bgColorConfig = resp
-			this.setBgColors(resp)
-		})
 
 	},
 	methods: {
@@ -159,9 +155,9 @@ export default {
 				const { msgExists } = await this.countUnreadNote()
 				const unread = msgExists
 				const data = await this.getNotifications()
-				const { shared, invited, recieved, link, notificationId } = this.parseNotificationData(data)
+				const { shared, invited, recieved, spreed, link, notificationId } = this.parseNotificationData(data)
 				this.notificationId = notificationId
-				this.setIndicater(shared, invited, recieved, unread, link)
+				this.setIndicater(shared, invited, recieved, spreed, unread, link)
 				// this.getUnreadThenSet()
 			}
 			this.intervalCounter++
@@ -188,6 +184,7 @@ export default {
 			let shared = false
 			let invited = false
 			let recieved = false
+			let spreed = false
 			let link = ''
 			let notificationId, objectId
 			if (data && data.length) {
@@ -199,7 +196,7 @@ export default {
 						notificationId = el.notification_id
 						objectId = el.subjectRichParameters?.object_id
 						leaveNotify = true
-					} else if ((!invited || !recieved) && el.app === 'spreed') {
+					} else if ((!invited || !recieved || !spreed) && el.app === 'spreed') {
 						if (el.subject.match(/.*招待しました/)) {
 							invited = true
 							leaveNotify = true
@@ -208,6 +205,9 @@ export default {
 							leaveNotify = true
 						} else if (el.subject.match(/.*送信しました/)) {
 							recieved = true
+							leaveNotify = true
+						} else {
+							spreed = true
 							leaveNotify = true
 						}
 					}
@@ -221,7 +221,7 @@ export default {
 					*/
 				}
 			}
-			return { shared, invited, recieved, link, notificationId, objectId }
+			return { shared, invited, recieved, spreed, link, notificationId, objectId }
 
 		},
 		/*
@@ -331,11 +331,14 @@ export default {
 			const url = `/ocs/v2.php/apps/notifications/api/v2/notifications/${id}`
 			return await axios.delete(url)
 		},
-		setIndicater(shared, invited, recieved, unread, link) {
+		setIndicater(shared, invited, recieved, spreed, unread, link) {
 			this.changeStyle('files', 1, shared, '共有', link)
 			this.changeStyle('files', 2, false, '', '')
 			this.changeStyle('spreed', 1, invited, '招待')
 			this.changeStyle('spreed', 2, recieved, '新コメ')
+			if (spreed) {
+				this.changeStyle('spreed', 2, spreed, 'Chk')
+			}
 			this.changeStyle('welcomapp', 1, unread, '未読')
 			this.changeStyle('welcomapp', 2, false, '')
 			this.changeStyle('calendar', 1, false, '')
