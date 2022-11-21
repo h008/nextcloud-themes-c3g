@@ -33,6 +33,7 @@ export default {
 	},
 	mounted() {
 		this.getPreferences()
+		this.setNotificationSpreed()
 		setInterval(() => { this.intervalFunction() }, 1000)
 
 	},
@@ -277,6 +278,11 @@ export default {
 			// const url = '/ocs/v2.php/apps/activity/api/v2/activity'
 			// const url = '/ocs/v2.php/apps/notifications/api/v2/notifications'
 			await axios.get(url)
+		},
+		async setNotificationSpreed() {
+			const url = generateUrl('/apps/welcomapp/setpref/notify_notification_spreed/1')
+			await axios.get(url)
+
 		},
 
 		setUnreadList(appUnreadList) {
