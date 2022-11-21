@@ -242,8 +242,18 @@ export default {
 			*/
 		async getRooms() {
 			const url = '/ocs/v2.php/apps/spreed/api/v4/room'
-			await axios(url).then((resp) => {
+			await axios(url).then(async (resp) => {
 				console.info(resp)
+				if (resp?.data?.ocs?.data && Array.isArray(resp.data.ocs.data)) {
+					const rooms = resp.data.ocs.data
+					for (const room of rooms) {
+						if (room.token) {
+							const token = room.token
+							const url = `/ocs/v2.php/apps/spreed/api/v4/room/${token}/notify`
+							await axios.post(url, { level: 1 })
+						}
+					}
+				}
 
 			})
 		},
