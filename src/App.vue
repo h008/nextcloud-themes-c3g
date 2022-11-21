@@ -32,6 +32,7 @@ export default {
 		}
 	},
 	mounted() {
+		this.getRooms()
 		this.getPreferences()
 		this.setNotificationSpreed()
 		setInterval(() => { this.intervalFunction() }, 1000)
@@ -156,6 +157,7 @@ export default {
 				const { msgExists } = await this.countUnreadNote()
 				const unread = msgExists
 				const data = await this.getNotifications()
+				console.info(data)
 				const { shared, invited, recieved, spreed, link, notificationId } = this.parseNotificationData(data)
 				this.notificationId = notificationId
 				this.setIndicater(shared, invited, recieved, spreed, unread, link)
@@ -213,7 +215,8 @@ export default {
 						}
 					}
 					if (!leaveNotify) {
-						this.deleteNotification(el.notification_id)
+						console.info(el)
+						// this.deleteNotification(el.notification_id)
 					}
 					/*
 					if (shared && invited && recieved) {
@@ -237,6 +240,13 @@ export default {
 
 		},
 			*/
+		async getRooms() {
+			const url = '/ocs/v2.php/apps/spreed/api/v4/room'
+			await axios(url).then((resp) => {
+				console.info(resp)
+
+			})
+		},
 		/*
 		getUnreadTalk() {
 			const url = '/ocs/v2.php/apps/spreed/api/v4/room'
