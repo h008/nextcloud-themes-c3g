@@ -211,7 +211,7 @@ export default {
 							leaveNotify = true
 						} else {
 							spreed = true
-							leaveNotify = true
+							// leaveNotify = true
 						}
 					}
 					if (!leaveNotify) {
