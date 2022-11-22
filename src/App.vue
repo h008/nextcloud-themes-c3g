@@ -363,7 +363,7 @@ export default {
 			this.changeStyle('spreed', 1, invited, '招待')
 			this.changeStyle('spreed', 2, recieved, '新コメ')
 			if (spreed) {
-				this.changeStyle('spreed', 2, spreed, 'Chk')
+			// this.changeStyle('spreed', 2, spreed, 'Chk')
 			}
 			this.changeStyle('welcomapp', 1, unread, '未読')
 			this.changeStyle('welcomapp', 2, false, '')
