@@ -32,8 +32,7 @@ export default {
 		}
 	},
 	mounted() {
-		this.getPreferences()
-		this.setNotificationSpreed()
+		this.setPreferences()
 		this.getRooms()
 		setInterval(() => { this.intervalFunction() }, 1000)
 
@@ -187,7 +186,7 @@ export default {
 			let shared = false
 			let invited = false
 			let recieved = false
-			let spreed = false
+			const spreed = false
 			let link = ''
 			let notificationId, objectId
 			if (data && data.length) {
@@ -209,9 +208,6 @@ export default {
 						} else if (el.subject.match(/.*送信しました/)) {
 							recieved = true
 							leaveNotify = true
-						} else {
-							spreed = true
-							// leaveNotify = true
 						}
 					}
 					if (!leaveNotify) {
@@ -291,7 +287,7 @@ export default {
 			const resp = await axios(url)
 			return resp.data?.ocs?.data || []
 		},
-		async getPreferences() {
+		async setPreferences() {
 			// const url = '/ocs/v2.php/apps/provisioning_api/api/v1/config/apps/activity/notify_email_calendar'
 			const url = generateUrl('/apps/welcomapp/setpref/notify_notification_shared/1')
 			// const data = { configValue: 1 }
