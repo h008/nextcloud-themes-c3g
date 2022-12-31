@@ -29,14 +29,22 @@
 /* gradient of the header color and a brighter shade */
 /* can also be a flat color or an image */
 #body-login {
-	background: #50BDE4; /* Old browsers */
-	background: -moz-linear-gradient(top, #30b7e9 0%, #50BDE4 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#30b7e9), color-stop(100%,#50BDE4)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, #30b7e9 0%,#50BDE4 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, #30b7e9 0%,#50BDE4 100%); /* Opera11.10+ */
-	background: -ms-linear-gradient(top, #30b7e9 0%,#50BDE4 100%); /* IE10+ */
-	background: linear-gradient(top, #30b7e9 0%,#50BDE4 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#30b7e9', endColorstr='#50BDE4',GradientType=0 ); /* IE6-9 */
+	background: #50BDE4;
+	/* Old browsers */
+	background: -moz-linear-gradient(top, #30b7e9 0%, #50BDE4 100%);
+	/* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #30b7e9), color-stop(100%, #50BDE4));
+	/* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #30b7e9 0%, #50BDE4 100%);
+	/* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #30b7e9 0%, #50BDE4 100%);
+	/* Opera11.10+ */
+	background: -ms-linear-gradient(top, #30b7e9 0%, #50BDE4 100%);
+	/* IE10+ */
+	background: linear-gradient(top, #30b7e9 0%, #50BDE4 100%);
+	/* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#30b7e9', endColorstr='#50BDE4', GradientType=0);
+	/* IE6-9 */
 }
 
 /* primary action button, use sparingly */
@@ -54,6 +62,7 @@ button.primary:active,
 	border-color: #50BDE4;
 	background-color: #30b7e9;
 }
+
 .primary:hover,
 input[type="submit"].primary:hover,
 input[type="button"].primary:hover,
@@ -66,10 +75,27 @@ button.primary:focus,
 .button.primary:focus {
 	background-color: #39bae9;
 }
-.primary:active, input[type="submit"].primary:active, input[type="button"].primary:active, button.primary:active, .button.primary:active,
-.primary:disabled, input[type="submit"].primary:disabled, input[type="button"].primary:disabled, button.primary:disabled, .button.primary:disabled,
-.primary:disabled:hover, input[type="submit"].primary:disabled:hover, input[type="button"].primary:disabled:hover, button.primary:disabled:hover, .button.primary:disabled:hover,
-.primary:disabled:focus, input[type="submit"].primary:disabled:focus, input[type="button"].primary:disabled:focus, button.primary:disabled:focus, .button.primary:disabled:focus {
+
+.primary:active,
+input[type="submit"].primary:active,
+input[type="button"].primary:active,
+button.primary:active,
+.button.primary:active,
+.primary:disabled,
+input[type="submit"].primary:disabled,
+input[type="button"].primary:disabled,
+button.primary:disabled,
+.button.primary:disabled,
+.primary:disabled:hover,
+input[type="submit"].primary:disabled:hover,
+input[type="button"].primary:disabled:hover,
+button.primary:disabled:hover,
+.button.primary:disabled:hover,
+.primary:disabled:focus,
+input[type="submit"].primary:disabled:focus,
+input[type="button"].primary:disabled:focus,
+button.primary:disabled:focus,
+.button.primary:disabled:focus {
 	background-color: #50BDE4;
 }
 
@@ -80,30 +106,32 @@ button.primary:focus,
 	width: 256px;
 	height: 128px;
 }
+
 #header .logo-icon {
 	width: 62px;
 	height: auto;
 }
 
-#appmenu li  {
-	border-right:#fff solid 4px;
+#appmenu li {
+	border-right: #fff solid 4px;
 	border-left: #fff solid 4px;
 }
-#appmenu li+ li  {
-	border-left:0;
+
+#appmenu li+li {
+	border-left: 0;
 	border-right: #fff solid 4px;
 }
 
 #appmenu li a.appmenu__tab {
-    position: relative;
-    display: flex;
-    margin: 0;
-    height: 50px;
-    width: 275px;
-    align-items: center;
-    justify-content: center;
-    letter-spacing: -0.5px;
-    font-size: 1.2em;
+	position: relative;
+	display: flex;
+	margin: 0;
+	height: 50px;
+	width: 275px;
+	align-items: center;
+	justify-content: center;
+	letter-spacing: -0.5px;
+	font-size: 1.2em;
 	font-weight: bold;
 	opacity: 0.7;
 	transition: .3s;
@@ -112,30 +140,30 @@ button.primary:focus,
 
 #appmenu li a.appmenu__tab:hover {
 	font-weight: 800;
-	font-size:1.25em;
-	opacity:0.9;
+	font-size: 1.25em;
+	opacity: 0.9;
 	transform: perspective(100px) translateZ(20px);
-  }
+}
 
 #appmenu li a.active {
-    opacity: 1;
-    font-weight: 900;
-	font-size:1.25em;
+	opacity: 1;
+	font-weight: 900;
+	font-size: 1.25em;
 }
 
 #appmenu li a::before {
-    content: inherit;
-    height: 0;
-    width: 0;
-    position: absolute;
-    pointer-events: none;
-    border: 0 solid transparent;
-    border-bottom-color: var(--color-main-background);
-    border-width: 10px;
-    transform: translateX(-50%);
-    left: 50%;
-    bottom: 0;
-    display: flex;
+	content: inherit;
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border: 0 solid transparent;
+	border-bottom-color: var(--color-main-background);
+	border-width: 10px;
+	transform: translateX(-50%);
+	left: 50%;
+	bottom: 0;
+	display: flex;
 }
 
 #appmenu li a svg {
@@ -145,67 +173,71 @@ button.primary:focus,
 #appmenu li a span {
 	color: #fff;
 	opacity: 1.0;
-	bottom:12px;
+	bottom: 12px;
 }
 
 
-#appmenu li[data-id="files"]  {
-	background-color:#FF5050;
+#appmenu li[data-id="files"] {
+	background-color: #FF5050;
 }
 
-#appmenu li[data-id="spreed"]  {
-	background-color:#40AFB2;
+#appmenu li[data-id="spreed"] {
+	background-color: #40AFB2;
 }
 
 #appmenu li[data-id="calendar"] {
-	background-color:#FFC000;
+	background-color: #FFC000;
 }
 
 #appmenu li[data-id="welcomapp"] {
-	background-color:#8E83B7;
+	background-color: #8E83B7;
 }
 
 #appmenu li[data-id="activity"],
 #apps ul li[data-id="activity"] {
-    display: none;
+	display: none;
 }
+
 #appmenu button {
 	min-height: 0px;
 }
 
 #more-apps {
-	width:50px;
+	width: 50px;
 }
 
-#app-navigation > ul > li > a[href="/settings/user/sync-clients"]{
-    display:none;
+#app-navigation>ul>li>a[href="/settings/user/sync-clients"] {
+	display: none;
 }
 
-#app-navigation > ul > li > a[href="/settings/user/ojsxc"]{
-    display:none;
+#app-navigation>ul>li>a[href="/settings/user/ojsxc"] {
+	display: none;
 }
 
-#app-navigation > ul > li > a[href="/settings/user/sharing"]{
-    display:none;
+#app-navigation>ul>li>a[href="/settings/user/sharing"] {
+	display: none;
 }
 
 
-#app-navigation > ul > li > a[href="/settings/user/privacy"],
-#app-navigation > ul > li > a[href="/settings/user/activity"]{
-    display:none;
+#app-navigation>ul>li>a[href="/settings/user/privacy"],
+#app-navigation>ul>li>a[href="/settings/user/activity"] {
+	display: none;
 }
+
 #apps ul {
 	list-style: none;
 }
 
-a[href*="spreed/?callUser=c	3g_support"]{
-    display:none;
+a[href*="spreed/?callUser=c	3g_support"] {
+	display: none;
 }
-.development-notice{
-	display:none;
+
+.development-notice {
+	display: none;
 }
-li[data-id="help"]{
-	display:none;
+
+li[data-id="help"] {
+	display: none;
 }
 
 #app-content-vue {
@@ -214,28 +246,33 @@ li[data-id="help"]{
 
 .top-bar {
 	background-color: #ECFCFF;
-	}
+}
 
- #app-navigation li a{
-	font-size:1.2em;
-	font-weight:bold;
+#app-navigation li a {
+	font-size: 1.2em;
+	font-weight: bold;
 }
-#app-navigation-vue span.line-one__title ,
+
+#app-navigation-vue span.line-one__title,
 #app-navigation-vue span.app-navigation-entry__title {
-	font-size:1.2em;
-	font-weight:bold;
-	color:#FFFFFF !important;
+	font-size: 1.2em;
+	font-weight: bold;
+	color: #FFFFFF !important;
 }
+
 #app-navigation-vue span.line-two__subtitle {
-	color:#e0e0e0;
+	color: #e0e0e0;
 }
-#app-navigation-vue ,#app-navigation{
+
+#app-navigation-vue,
+#app-navigation {
 	background-color: #5677B8;
 }
-#app-navigation:not(.vue)>ul>li>a, #app-navigation:not(.vue)>ul>li>ul>li>a,
-#app-navigation a
-{
-	color:#FFFFFF;
+
+#app-navigation:not(.vue)>ul>li>a,
+#app-navigation:not(.vue)>ul>li>ul>li>a,
+#app-navigation a {
+	color: #FFFFFF;
 	background-color: #5677B8;
 
 }
@@ -245,87 +282,114 @@ li[data-id="help"]{
 #app-navigation:not(.vue)>ul>li a:hover>a,
 #app-navigation:not(.vue)>ul>li a:focus,
 #app-navigation:not(.vue)>ul>li a:focus>a,
+#app-navigation>ul>li.active,
+#app-navigation-vue>ul.app-navigation__list>div>li.app-navigation-entry:hover,
+#app-navigation-vue>ul.app-navigation__list>div>li.app-navigation-entry:focus,
+#app-navigation-vue>ul.app-navigation__list>div>li.app-navigation-entry:focus-within,
+#app-navigation-vue>ul.app-navigation__list>div>li.app-navigation-entry:active,
+#app-navigation-vue>ul.app-navigation__list>li.app-navigation-entry-new-calendar:hover,
+#app-navigation-vue>ul.app-navigation__list>li.app-navigation-entry-new-calendar:focus,
+#app-navigation-vue>ul.app-navigation__list>li.app-navigation-entry-new-calendar:focus-within,
+#app-navigation-vue>ul.app-navigation__list>li.app-navigation-entry-new-calendar:active,
+.draggable-calendar-lisi-item:focus-within,
+.draggable-calendar-lisi-item:hover,
 #app-navigation a:focus-within,
 #app-navigation a:hover,
 #app-navigation li a.active,
 #app-navigation-vue>ul a.list-item[id*="conversation_"]:hover,
 #app-navigation-vue>ul a.list-item--active[id*="conversation_"],
-#app-navigation-vue>ul a.list-item[id*="conversation_"]:active ,
-	.app-navigation-entry:focus-within,
-	.app-navigation-entry:hover,
-	.list-item[id*="conversation_"]:hover,
-	.list-item:focus-within,.list-item:hover{
-		background-color: #5677B8;
-		filter:brightness(80%);
+#app-navigation-vue>ul a.list-item[id*="conversation_"]:active,
+.app-navigation-entry:focus-within,
+.app-navigation-entry:hover,
+.list-item[id*="conversation_"]:hover,
+.list-item:focus-within,
+.list-item:hover {
+	background-color: #5677B8;
+	filter: brightness(80%);
 }
 
-#app-content-vue > div.fc-theme-standard {
-background-color:#FFF;
+#app-content-vue>div.fc-theme-standard {
+	background-color: #FFF;
 }
 
-.fc-theme-standard td, .fc-theme-standard th {
-	border: 2px solid  #eee;
+.fc-theme-standard td,
+.fc-theme-standard th {
+	border: 2px solid #eee;
 }
-.fc-daygrid-day , .fc-col-header-cell  {
+
+.fc-daygrid-day,
+.fc-col-header-cell {
 	border: 2px solid #ccc !important;
 }
-.fc-day-sat > div > div >.fc-daygrid-day-number{
-	color:blue !important;
+
+.fc-day-sat>div>div>.fc-daygrid-day-number {
+	color: blue !important;
 }
-.fc-day-sun > div > div > .fc-daygrid-day-number{
-	color:red !important;
+
+.fc-day-sun>div>div>.fc-daygrid-day-number {
+	color: red !important;
 }
-table.fc-scrollgrid-sync-table > tbody > tr > td.fc-daygrid-day.fc-day.fc-day-sat.fc-day-past ,
-table.fc-scrollgrid-sync-table > tbody > tr > td.fc-daygrid-day.fc-day.fc-day-sun.fc-day-past {
-	background-color : rgba(240,240,240,0.5) ;
+
+table.fc-scrollgrid-sync-table>tbody>tr>td.fc-daygrid-day.fc-day.fc-day-sat.fc-day-past,
+table.fc-scrollgrid-sync-table>tbody>tr>td.fc-daygrid-day.fc-day.fc-day-sun.fc-day-past {
+	background-color: rgba(240, 240, 240, 0.5);
 	border: 2px solid #ccc !important;
 }
-.fc-scrollgrid-sync-table > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(7) > div:nth-child(1){
-	min-height:161px !important;
+
+.fc-scrollgrid-sync-table>tbody:nth-child(2)>tr:nth-child(1)>td:nth-child(7)>div:nth-child(1) {
+	min-height: 161px !important;
 }
+
 .fc-col-header-cell .fc-day .fc-day-sat {
 
-	background-color : rgba(240,240,240,0.5) !important;
+	background-color: rgba(240, 240, 240, 0.5) !important;
 }
+
 .fc-daygrid-day .fc-day .fc-day-sat {
-	background-color : rgba(240,240,240,0.5) !important;
+	background-color: rgba(240, 240, 240, 0.5) !important;
 	outline: 2px solid #eee;
 }
 
 .fc-daygrid-day .fc-day {
-	max-height:150px !important;
-}
-th.fc-col-header-cell.fc-day-sat > .fc-scrollgrid-sync-inner  {
-	background-color:blue;
-}
-th.fc-col-header-cell.fc-day-sun > .fc-scrollgrid-sync-inner  {
-	background-color:red;
-}
-.fc-day-sun > .fc-scrollgrid-sync-inner > .fc-col-header-cell-cushion ,
-.fc-day-sat > .fc-scrollgrid-sync-inner > .fc-col-header-cell-cushion {
-	color:white !important;
-}
-.fc-day-today > .fc-daygrid-day-frame > .fc-daygrid-day-top > .fc-daygrid-day-number {
-    background-color:#50BDE4;
-    color: #F7F7F7;
-    border-radius: 0%;
-    margin: 4px;
-    width: 100%;
-    height: 24px;
-    text-align: center;
-    font-weight: bold !important;
-    padding: 0 !important;
-}
-.c3g__rokuyou {
-	color:black;
-}
-.unread_counter_wrapper{
-	position:relative
+	max-height: 150px !important;
 }
 
-.unread_counter_area{
+th.fc-col-header-cell.fc-day-sat>.fc-scrollgrid-sync-inner {
+	background-color: blue;
+}
+
+th.fc-col-header-cell.fc-day-sun>.fc-scrollgrid-sync-inner {
+	background-color: red;
+}
+
+.fc-day-sun>.fc-scrollgrid-sync-inner>.fc-col-header-cell-cushion,
+.fc-day-sat>.fc-scrollgrid-sync-inner>.fc-col-header-cell-cushion {
+	color: white !important;
+}
+
+.fc-day-today>.fc-daygrid-day-frame>.fc-daygrid-day-top>.fc-daygrid-day-number {
+	background-color: #50BDE4;
+	color: #F7F7F7;
+	border-radius: 0%;
+	margin: 4px;
+	width: 100%;
+	height: 24px;
+	text-align: center;
+	font-weight: bold !important;
+	padding: 0 !important;
+}
+
+.c3g__rokuyou {
+	color: black;
+}
+
+.unread_counter_wrapper {
+	position: relative
+}
+
+.unread_counter_area {
 	position: absolute;
-	top:2px;
+	top: 2px;
 	right: 8px;
 
 }
@@ -335,10 +399,10 @@ th.fc-col-header-cell.fc-day-sun > .fc-scrollgrid-sync-inner  {
 	padding: 0px 9px;
 	line-height: 1.5em;
 	background-color: #fff;
-	color:red;
+	color: red;
 	margin-bottom: 1px;
-	border-radius:10px;
-	display:none;
+	border-radius: 10px;
+	display: none;
 }
 
 .unread_badge2 {
@@ -346,69 +410,80 @@ th.fc-col-header-cell.fc-day-sun > .fc-scrollgrid-sync-inner  {
 	line-height: 1.5em;
 	padding: 0px 9px;
 	background-color: #fff;
-	color:red;
-	
-	border-radius:10px;
-	display:none;
+	color: red;
+
+	border-radius: 10px;
+	display: none;
 }
+
 #appmenu .unread_badge1 a {
-	height:10px;
+	height: 10px;
 }
 
 .unread_counter {
 	max-height: 20px;
 	max-width: 16px;
-	min-height:20px;
-	min-width:16px;
+	min-height: 20px;
+	min-width: 16px;
 	text-overflow: clip;
 	white-space: nowrap;
 	overflow: hidden;
 	font-size: 10px;
-	padding:1px;
+	padding: 1px;
 }
 
 .unread_counter::first-letter {
 	font-size: 10px;
-	color:#FF5050;
+	color: #FF5050;
 }
-.notifications {	
-	display:none;
+
+.notifications {
+	display: none;
 }
+
 #app-navigation .nav-icon-files {
 	background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path fill="%23FFF" d="M64 480H448c35.3 0 64-28.7 64-64V160c0-35.3-28.7-64-64-64H298.5c-17 0-33.3-6.7-45.3-18.7L226.7 50.7c-12-12-28.3-18.7-45.3-18.7H64C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64z"/></svg>');
 }
+
 #app-navigation .nav-icon-recent {
 	background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" ><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path fill="%23FFF" d="M256 512C114.6 512 0 397.4 0 256S114.6 0 256 0S512 114.6 512 256s-114.6 256-256 256zM232 120V256c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24z"/></svg>');
 }
+
 #app-navigation .nav-icon-favorites {
 	background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path fill="%23FFF" d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>');
 }
+
 #app-navigation .nav-icon-shareoverview {
 	background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path fill="%23FFF" d="M352 224c53 0 96-43 96-96s-43-96-96-96s-96 43-96 96c0 4 .2 8 .7 11.9l-94.1 47C145.4 170.2 121.9 160 96 160c-53 0-96 43-96 96s43 96 96 96c25.9 0 49.4-10.2 66.6-26.9l94.1 47c-.5 3.9-.7 7.8-.7 11.9c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-25.9 0-49.4 10.2-66.6 26.9l-94.1-47c.5-3.9 .7-7.8 .7-11.9s-.2-8-.7-11.9l94.1-47C302.6 213.8 326.1 224 352 224z"/></svg>');
 }
+
 #app-navigation .nav-icon-systemtagsfilter {
 	background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path fill="%23FFF" d="M0 80V229.5c0 17 6.7 33.3 18.7 45.3l176 176c25 25 65.5 25 90.5 0L418.7 317.3c25-25 25-65.5 0-90.5l-176-176c-12-12-28.3-18.7-45.3-18.7H48C21.5 32 0 53.5 0 80zm112 96c-17.7 0-32-14.3-32-32s14.3-32 32-32s32 14.3 32 32s-14.3 32-32 32z"/></svg>');
 }
+
 #app-navigation .nav-icon-trashbin {
 	background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path fill="%23FFF" d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"/></svg>');
 }
+
 #app-navigation .icon-quota {
 	background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path fill="%23FFF" d="M304 240V16.6c0-9 7-16.6 16-16.6C443.7 0 544 100.3 544 224c0 9-7.6 16-16.6 16H304zM32 272C32 150.7 122.1 50.3 239 34.3c9.2-1.3 17 6.1 17 15.4V288L412.5 444.5c6.7 6.7 6.2 17.7-1.5 23.1C371.8 495.6 323.8 512 272 512C139.5 512 32 404.6 32 272zm526.4 16c9.3 0 16.6 7.8 15.4 17c-7.7 55.9-34.6 105.6-73.9 142.3c-6 5.6-15.4 5.2-21.2-.7L320 288H558.4z"/></svg>');
 }
 
-@media (max-width:1220px){ 
-#appmenu li a.appmenu__tab {
-	width:220px;
-	font-size:medium;
+@media (max-width:1220px) {
+	#appmenu li a.appmenu__tab {
+		width: 220px;
+		font-size: medium;
+	}
+
+	#appmenu li a.appmenu__tab:hover {
+		font-weight: 800;
+		font-size: 1.15em;
+		opacity: 0.9;
+		transform: perspective(100px) translateZ(10px);
+	}
+
+	#appmenu li a.active {
+		font-weight: 900;
+		font-size: 1.15em;
+	}
 }
-#appmenu li a.appmenu__tab:hover {
-	font-weight: 800;
-	font-size:1.15em;
-	opacity:0.9;
-	transform: perspective(100px) translateZ(10px);
-  }
-#appmenu li a.active {
-    font-weight: 900;
-	font-size:1.15em;
-}
-  }

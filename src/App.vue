@@ -69,6 +69,8 @@ export default {
 			}
 			#app-navigation:not(.vue)>ul>li a,
 			#app-navigation:not(.vue)>ul>li>ul>li>a,
+			#app-navigation-vue>ul.app-navigation__list>div>li.app-navigation-entry>ul.app-navigation-entry__children,
+			#app-navigation-vue>ul.app-navigation__list>div>li.app-navigation-entry>ul.app-navigation-entry__children>div.sharing-section>li.app-navigation-entry:hover,
 			#app-navigation a,
 			#sublist-shareoverview,
 			#sublist-shareoverview>li {
@@ -77,6 +79,19 @@ export default {
 			}
 			#app-navigation:not(.vue)>ul>li a.active,
 			#app-navigation:not(.vue)>ul>li a:hover,
+			#app-navigation-vue>ul.app-navigation__list>div>li.app-navigation-entry:hover,
+			#app-navigation-vue>ul.app-navigation__list>div>li.app-navigation-entry:focus,
+			#app-navigation-vue>ul.app-navigation__list>div>li.app-navigation-entry:focus-within,
+			#app-navigation-vue>ul.app-navigation__list>div>li.app-navigation-entry:active,
+			#app-navigation-vue>ul.app-navigation__list>div>li.app-navigation-entry:active,
+			#app-navigation-vue>ul.app-navigation__list>li.app-navigation-entry-new-calendar:hover,
+			#app-navigation-vue>ul.app-navigation__list>li.app-navigation-entry-new-calendar:focus,
+			#app-navigation-vue>ul.app-navigation__list>li.app-navigation-entry-new-calendar:focus-within,
+			#app-navigation-vue>ul.app-navigation__list>li.app-navigation-entry-new-calendar:active,
+			#app-navigation-vue>ul.app-navigation__list>li.app-navigation-entry--pinned:hover,
+			#app-navigation-vue>ul.app-navigation__list>li.app-navigation-entry--pinned:focus,
+			#app-navigation-vue>ul.app-navigation__list>li.app-navigation-entry--pinned:focus-within,
+			#app-navigation-vue>ul.app-navigation__list>li.app-navigation-entry--pinned:active,
 			#app-navigation-vue>ul a.list-item[id*="conversation_"]:hover,
 			#app-navigation-vue>ul a.list-item--active[id*="conversation_"],
 			#app-navigation-vue>ul a.list-item[id*="conversation_"]:active,
@@ -84,7 +99,7 @@ export default {
 			#app-navigation:not(.vue)>ul>li>ul>li:focus,
 			#app-navigation:not(.vue)>ul>li>ul>li:focus>a {
 				background-color: ${color} !important;
-				filter:brightness(80%);
+				filter:brightness(90%);
 			}`
 			const style = window.document.createElement('style')
 			style.setAttribute('id', 'c3g-style')
@@ -359,7 +374,7 @@ export default {
 			this.changeStyle('spreed', 1, invited, '招待')
 			this.changeStyle('spreed', 2, recieved, '新コメ')
 			if (spreed) {
-			// this.changeStyle('spreed', 2, spreed, 'Chk')
+				// this.changeStyle('spreed', 2, spreed, 'Chk')
 			}
 			this.changeStyle('welcomapp', 1, unread, '未読')
 			this.changeStyle('welcomapp', 2, false, '')
