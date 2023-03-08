@@ -32,7 +32,7 @@ export default {
 		}
 	},
 	mounted() {
-		// this.setPreferences()
+		this.setPreferences()
 		this.getRooms()
 		setInterval(() => { this.intervalFunction() }, 1000)
 
