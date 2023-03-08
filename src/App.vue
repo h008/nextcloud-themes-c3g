@@ -32,7 +32,7 @@ export default {
 		}
 	},
 	mounted() {
-		this.setPreferences()
+		// this.setPreferences()
 		this.getRooms()
 		setInterval(() => { this.intervalFunction() }, 1000)
 
@@ -301,11 +301,7 @@ export default {
 			return resp.data?.ocs?.data || []
 		},
 		async setPreferences() {
-			// const url = '/ocs/v2.php/apps/provisioning_api/api/v1/config/apps/activity/notify_email_calendar'
 			const url = generateUrl('/apps/welcomapp/setpref/notify_notification_shared/1')
-			// const data = { configValue: 1 }
-			// const url = '/ocs/v2.php/apps/activity/api/v2/activity'
-			// const url = '/ocs/v2.php/apps/notifications/api/v2/notifications'
 			await axios.get(url)
 		},
 		async setNotificationSpreed() {
