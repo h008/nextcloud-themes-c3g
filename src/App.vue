@@ -21,7 +21,7 @@ export default {
 			unreadNote: 0,
 			noteExists: false,
 			intervalCounter: 0,
-			interval: 10,
+			interval: 15,
 			unreadList: [
 				{ app: 'spreed', unreadCount: 0, msgExists: false },
 				{ app: 'welcomapp', unreadCount: 0, msgExists: false },
@@ -171,7 +171,6 @@ export default {
 				const { msgExists } = await this.countUnreadNote()
 				const unread = msgExists
 				const data = await this.getNotifications()
-				console.info(data)
 				const { shared, invited, recieved, spreed, link, notificationId } = this.parseNotificationData(data)
 				this.notificationId = notificationId
 				this.setIndicater(shared, invited, recieved, spreed, unread, link)
@@ -254,7 +253,6 @@ export default {
 		async getRooms() {
 			const url = '/ocs/v2.php/apps/spreed/api/v4/room'
 			await axios(url).then(async (resp) => {
-				console.info(resp)
 				if (resp?.data?.ocs?.data && Array.isArray(resp.data.ocs.data)) {
 					const rooms = resp.data.ocs.data
 					for (const room of rooms) {
