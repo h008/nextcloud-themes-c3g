@@ -25,7 +25,7 @@ class OC_Theme {
 	 * @return string URL
 	 */
 	public function getBaseUrl() {
-		return 'https://www.sincerely.c3g.jp';
+		return 'https://sincerely.c3g.work';
 	}
 
 	/**
@@ -33,7 +33,7 @@ class OC_Theme {
 	 * @return string URL
 	 */
 	public function getDocBaseUrl() {
-		return 'https://www.sincerely.c3g.jp';
+		return 'https://sincerely.c3g.work';
 	}
 
 	/**
